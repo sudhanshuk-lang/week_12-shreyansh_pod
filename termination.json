@@ -1,0 +1,569 @@
+{
+    "env": "hr_experts",
+    "model_provider": "fireworks",
+    "model": "qwen3-coder-480b-a35b-instruct",
+    "num_trials": 3,
+    "temperature": 1,
+    "interface_num": 4,
+    "task": {
+        "user_id": "6",
+        "instruction":  "You are Tina Hale, an HR Manager. You must process the offboarding of employee Randy Williams (williams441@outlook.com) following poor performance. The process has been approved by Compliance Officer Ariel Benitez (arielbenitez@hotmail.com).",
+    "actions": [
+    {
+      "name": "check_approval",
+      "arguments": {
+        "action": "employee_offboarding",
+        "requester_email": "arielbenitez@hotmail.com"
+      },
+      "output": {
+        "approval_valid": true,
+        "approved_by": [
+          "compliance_officer",
+          "hr_manager"
+        ],
+        "message": "All required approvals received from: hr_manager, compliance_officer"
+      }
+    },
+    {
+      "name": "discover_user_employee_entities",
+      "arguments": {
+        "entity_type": "users",
+        "filters": {
+          "email": "williams441@outlook.com"
+        }
+      },
+      "output": {
+        "count": 1,
+        "entity_type": "users",
+        "results": [
+          {
+            "created_at": "2023-11-26T13:14:25",
+            "email": "williams441@outlook.com",
+            "first_name": "Randy",
+            "last_name": "Williams",
+            "mfa_enabled": true,
+            "phone_number": "+17182418518",
+            "role": "employee",
+            "status": "active",
+            "updated_at": "2024-10-15T19:08:29",
+            "user_id": "48"
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "name": "discover_payroll_entities",
+      "arguments": {
+        "entity_type": "payroll_records",
+        "filters": {
+          "employee_id": "2"
+        }
+      },
+      "output": {
+        "count": 6,
+        "entity_type": "payroll_records",
+        "results": [
+          {
+            "approved_by": "35",
+            "created_at": "2024-10-02T23:53:05",
+            "employee_id": "2",
+            "hourly_rate": 16.0,
+            "hours_worked": 16.42,
+            "pay_period_end": "2024-09-30",
+            "pay_period_start": "2024-09-01",
+            "payment_date": null,
+            "payroll_id": "1",
+            "status": "approved",
+            "updated_at": "2025-03-27T03:08:35"
+          },
+          {
+            "approved_by": "33",
+            "created_at": "2024-11-01T20:28:45",
+            "employee_id": "2",
+            "hourly_rate": 16.0,
+            "hours_worked": 8.58,
+            "pay_period_end": "2024-10-31",
+            "pay_period_start": "2024-10-01",
+            "payment_date": null,
+            "payroll_id": "2",
+            "status": "draft",
+            "updated_at": "2025-04-06T20:24:38"
+          },
+          {
+            "approved_by": "36",
+            "created_at": "2025-02-01T17:11:59",
+            "employee_id": "2",
+            "hourly_rate": 16.0,
+            "hours_worked": 14.42,
+            "pay_period_end": "2025-01-31",
+            "pay_period_start": "2025-01-01",
+            "payment_date": "2025-02-14",
+            "payroll_id": "3",
+            "status": "paid",
+            "updated_at": "2025-04-25T03:19:04"
+          },
+          {
+            "approved_by": "37",
+            "created_at": "2025-06-04T13:33:38",
+            "employee_id": "2",
+            "hourly_rate": 16.0,
+            "hours_worked": 8.25,
+            "pay_period_end": "2025-05-31",
+            "pay_period_start": "2025-05-01",
+            "payment_date": "2025-06-11",
+            "payroll_id": "4",
+            "status": "paid",
+            "updated_at": "2025-08-07T14:22:37"
+          },
+          {
+            "approved_by": "33",
+            "created_at": "2025-07-02T20:04:46",
+            "employee_id": "2",
+            "hourly_rate": 16.0,
+            "hours_worked": 14.83,
+            "pay_period_end": "2025-06-30",
+            "pay_period_start": "2025-06-01",
+            "payment_date": "2025-07-11",
+            "payroll_id": "5",
+            "status": "paid",
+            "updated_at": "2025-08-04T23:43:11"
+          },
+          {
+            "approved_by": "33",
+            "created_at": "2025-09-01T06:34:34",
+            "employee_id": "2",
+            "hourly_rate": 16.0,
+            "hours_worked": 16.64,
+            "pay_period_end": "2025-08-31",
+            "pay_period_start": "2025-08-01",
+            "payment_date": null,
+            "payroll_id": "6",
+            "status": "approved",
+            "updated_at": "2025-09-01T06:34:34"
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "name": "discover_benefits_entities",
+      "arguments": {
+        "entity_type": "employee_benefits",
+        "filters": {
+          "employee_id": "2"
+        }
+      },
+      "output": {
+        "count": 3,
+        "entity_type": "employee_benefits",
+        "results": [
+          {
+            "beneficiary_name": "Randy Williams",
+            "beneficiary_relationship": "self",
+            "coverage_level": "employee_only",
+            "created_at": "2025-06-30T15:29:14",
+            "employee_id": "2",
+            "enrollment_date": "2024-12-25",
+            "enrollment_id": "1",
+            "plan_id": "14",
+            "status": "active",
+            "updated_at": "2025-07-08T20:04:56"
+          },
+          {
+            "beneficiary_name": "Randy Williams",
+            "beneficiary_relationship": "self",
+            "coverage_level": "employee_only",
+            "created_at": "2025-02-09T13:37:27",
+            "employee_id": "2",
+            "enrollment_date": "2024-11-16",
+            "enrollment_id": "2",
+            "plan_id": "7",
+            "status": "active",
+            "updated_at": "2025-04-01T21:14:35"
+          },
+          {
+            "beneficiary_name": "Amber Brown",
+            "beneficiary_relationship": "child",
+            "coverage_level": "employee_children",
+            "created_at": "2025-06-22T21:10:24",
+            "employee_id": "2",
+            "enrollment_date": "2025-05-27",
+            "enrollment_id": "3",
+            "plan_id": "2",
+            "status": "active",
+            "updated_at": "2025-08-27T13:01:45"
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "name": "discover_training_entities",
+      "arguments": {
+        "entity_type": "employee_training",
+        "filters": {
+          "employee_id": "2"
+        }
+      },
+      "output": {
+        "count": 5,
+        "entity_type": "employee_training",
+        "results": [
+          {
+            "certificate_issued": false,
+            "completion_date": "2024-11-05",
+            "created_at": "2024-09-21T03:46:55",
+            "employee_id": "2",
+            "enrollment_date": "2024-09-20",
+            "expiry_date": null,
+            "program_id": "37",
+            "score": 67.03,
+            "status": "completed",
+            "training_record_id": "1",
+            "updated_at": "2024-12-23T12:32:11"
+          },
+          {
+            "certificate_issued": false,
+            "completion_date": null,
+            "created_at": "2025-08-16T02:45:25",
+            "employee_id": "2",
+            "enrollment_date": "2025-08-16",
+            "expiry_date": null,
+            "program_id": "9",
+            "score": null,
+            "status": "in_progress",
+            "training_record_id": "2",
+            "updated_at": "2025-08-17T20:52:24"
+          },
+          {
+            "certificate_issued": true,
+            "completion_date": "2025-06-25",
+            "created_at": "2025-05-28T12:28:24",
+            "employee_id": "2",
+            "enrollment_date": "2025-05-28",
+            "expiry_date": null,
+            "program_id": "43",
+            "score": 84.48,
+            "status": "completed",
+            "training_record_id": "3",
+            "updated_at": "2025-07-11T03:47:09"
+          },
+          {
+            "certificate_issued": true,
+            "completion_date": "2025-08-09",
+            "created_at": "2025-07-12T16:53:26",
+            "employee_id": "2",
+            "enrollment_date": "2025-07-11",
+            "expiry_date": "2028-07-31",
+            "program_id": "45",
+            "score": 79.63,
+            "status": "completed",
+            "training_record_id": "4",
+            "updated_at": "2025-08-07T10:02:18"
+          },
+          {
+            "certificate_issued": true,
+            "completion_date": "2025-08-07",
+            "created_at": "2025-07-30T20:02:57",
+            "employee_id": "2",
+            "enrollment_date": "2025-07-30",
+            "expiry_date": null,
+            "program_id": "38",
+            "score": 70.42,
+            "status": "completed",
+            "training_record_id": "5",
+            "updated_at": "2025-08-18T18:55:23"
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "name": "manage_employee",
+      "arguments": {
+        "action": "update",
+        "employee_id": "2",
+        "employment_status": "terminated",
+        "hourly_rate": 0.0,
+        "manager_id": "62",
+        "user_id": "48"
+      },
+      "output": {
+        "employee_data": {
+          "address": "61354 Julia Mountains Suite 646, Lake Robert, WV 21052",
+          "created_at": "2024-10-31T15:35:19",
+          "date_of_birth": "1988-11-27",
+          "employee_id": "2",
+          "employment_status": "terminated",
+          "hire_date": "2024-09-12",
+          "hourly_rate": 0.0,
+          "manager_id": "62",
+          "position_id": "305",
+          "updated_at": "2025-10-01T12:00:00",
+          "user_id": "48"
+        },
+        "employee_id": "2",
+        "message": "Employee with ID '2' updated successfully",
+        "success": true
+      }
+    },
+    {
+      "name": "manage_user",
+      "arguments": {
+        "action": "update",
+        "mfa_enabled": true,
+        "status": "inactive",
+        "user_id": "48"
+      },
+      "output": {
+        "message": "User 48 updated successfully",
+        "success": true,
+        "updated_fields": [
+          "status",
+          "mfa_enabled"
+        ],
+        "user_data": {
+          "created_at": "2023-11-26T13:14:25",
+          "email": "williams441@outlook.com",
+          "first_name": "Randy",
+          "last_name": "Williams",
+          "mfa_enabled": true,
+          "phone_number": "+17182418518",
+          "role": "employee",
+          "status": "inactive",
+          "updated_at": "2025-10-01T12:00:00",
+          "user_id": "48"
+        }
+      }
+    },
+    {
+      "name": "manage_employee_benefits",
+      "arguments": {
+        "action": "update",
+        "enrollment_id": "1"
+      },
+      "output": {
+        "error": "benefits_data is required for update action",
+        "success": false
+      }
+    },
+    {
+      "name": "manage_employee_benefits",
+      "arguments": {
+        "action": "update",
+        "enrollment_id": "2"
+      },
+      "output": {
+        "error": "benefits_data is required for update action",
+        "success": false
+      }
+    },
+    {
+      "name": "manage_employee_benefits",
+      "arguments": {
+        "action": "update",
+        "enrollment_id": "3"
+      },
+      "output": {
+        "error": "benefits_data is required for update action",
+        "success": false
+      }
+    },
+    {
+      "name": "manage_employee_training",
+      "arguments": {
+        "operation": "update",
+        "score": 0.0,
+        "status": "cancelled",
+        "training_record_id": "2"
+      },
+      "output": {
+        "certificate_issued": false,
+        "completion_date": null,
+        "created_at": "2025-08-16T02:45:25",
+        "employee_id": "2",
+        "enrollment_date": "2025-08-16",
+        "expiry_date": null,
+        "program_id": "9",
+        "score": 0,
+        "status": "cancelled",
+        "training_record_id": "2",
+        "updated_at": "2025-10-01T12:00:00"
+      }
+    },
+    {
+      "name": "manage_audit_logs",
+      "arguments": {
+        "action": "update",
+        "field_name": "role",
+        "new_value": "Terminated",
+        "old_value": "Employee",
+        "operation": "create",
+        "reference_id": "201",
+        "reference_type": "users",
+        "user_id": "48"
+      },
+      "output": {
+        "action": "update",
+        "field_name": "role",
+        "log_id": "2885",
+        "new_value": "Terminated",
+        "old_value": "Employee",
+        "reference_id": "201",
+        "reference_type": "users",
+        "timestamp": "2025-10-01T12:00:00",
+        "user_id": "48"
+      }
+    }
+  ],
+"edges": [
+{
+"from": "instruction",
+"to": "check_approval",
+"connection": {
+"output": "action, requester_email",
+"input": "action, requester_email"
+}
+},
+{
+"from": "instruction",
+"to": "discover_user_employee_entities",
+"connection": {
+"output": "email",
+"input": "filters.email"
+}
+},
+{
+"from": "instruction",
+"to": "discover_payroll_entities",
+"connection": {
+"output": "employee_id",
+"input": "filters.employee_id"
+}
+},
+{
+"from": "instruction",
+"to": "discover_benefits_entities",
+"connection": {
+"output": "employee_id",
+"input": "filters.employee_id"
+}
+},
+{
+"from": "instruction",
+"to": "discover_training_entities",
+"connection": {
+"output": "employee_id",
+"input": "filters.employee_id"
+}
+},
+{
+"from": "discover_payroll_entities",
+"to": "manage_employee",
+"connection": {
+"output": "results[0].employee_id",
+"input": "employee_id"
+}
+},
+{
+"from": "discover_user_employee_entities",
+"to": "manage_employee",
+"connection": {
+"output": "results[0].user_id",
+"input": "user_id"
+}
+},
+{
+"from": "instruction",
+"to": "manage_employee",
+"connection": {
+"output": "action, employment_status, hourly_rate, manager_id",
+"input": "action, employment_status, hourly_rate, manager_id"
+}
+},
+{
+"from": "discover_user_employee_entities",
+"to": "manage_user",
+"connection": {
+"output": "results[0].user_id",
+"input": "user_id"
+}
+},
+{
+"from": "manage_employee",
+"to": "manage_user",
+"connection": {
+"output": "employee_data.user_id",
+"input": "user_id"
+}
+},
+{
+"from": "instruction",
+"to": "manage_user",
+"connection": {
+"output": "action, mfa_enabled, status",
+"input": "action, mfa_enabled, status"
+}
+},
+{
+"from": "discover_benefits_entities",
+"to": "manage_employee_benefits",
+"connection": {
+"output": "results[0].enrollment_id",
+"input": "enrollment_id"
+}
+},
+{
+"from": "discover_benefits_entities",
+"to": "manage_employee_benefits",
+"connection": {
+"output": "results[1].enrollment_id",
+"input": "enrollment_id"
+}
+},
+{
+"from": "discover_benefits_entities",
+"to": "manage_employee_benefits",
+"connection": {
+"output": "results[2].enrollment_id",
+"input": "enrollment_id"
+}
+},
+{
+"from": "discover_training_entities",
+"to": "manage_employee_training",
+"connection": {
+"output": "results[1].training_record_id",
+"input": "training_record_id"
+}
+},
+{
+"from": "instruction",
+"to": "manage_employee_training",
+"connection": {
+"output": "operation, score, status",
+"input": "operation, score, status"
+}
+},
+{
+"from": "manage_user",
+"to": "manage_audit_logs",
+"connection": {
+"output": "user_data.user_id",
+"input": "user_id"
+}
+},
+{
+"from": "instruction",
+"to": "manage_audit_logs",
+"connection": {
+"output": "action, field_name, new_value, old_value, operation, reference_id, reference_type",
+"input": "action, field_name, new_value, old_value, operation, reference_id, reference_type"
+}
+}
+],
+        "outputs": ["70.42", "2", "16","16.64"],
+        "num_edges": 18
+    }
+}
