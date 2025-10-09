@@ -4,7 +4,7 @@
     "model": "qwen3-coder-480b-a35b-instruct",
     "num_trials": 3,
     "temperature": 1,
-    "interface_num": 4,
+    "interface_num": 1,
     "task": {
         "user_id": "6",
         "instruction":  "You are Tina Hale, an HR Manager. You must process the offboarding of employee Randy Williams (williams441@outlook.com) following poor performance. The process has been approved by Compliance Officer Ariel Benitez (arielbenitez@hotmail.com).",
