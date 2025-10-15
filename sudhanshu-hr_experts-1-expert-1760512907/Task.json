@@ -1,0 +1,509 @@
+{
+  "env": "hr_experts",
+  "model_provider": "fireworks",
+  "model": "qwen3-coder-480b-a35b-instruct",
+  "num_trials": 3,
+  "temperature": 1,
+  "interface_num": 1,
+  "task": {
+    "user_id": "7",
+    "instruction": "You are John Freeman (johnfreeman@outlook.com), a finance officer. Derek Contreras (dcontreras@yahoo.com), one of the employee, has requested a salary increase from $169 to $200 hourly. After reviewing the performance metrics which show he consistently exceeds targets by 25% , you want to approve this salary adjustment effective march 1st, 2022.",
+    "actions": [
+      {
+        "name": "discover_user_employee_entities",
+        "arguments": {
+          "entity_type": "users",
+          "filters": {
+            "email": "johnfreeman@outlook.com"
+          }
+        },
+        "output": {
+          "count": 1,
+          "entity_type": "users",
+          "results": [
+            {
+              "created_at": "2023-01-14T03:16:14",
+              "email": "johnfreeman@outlook.com",
+              "first_name": "John",
+              "last_name": "Freeman",
+              "mfa_enabled": false,
+              "phone_number": "+19384125091",
+              "role": "finance_officer",
+              "status": "active",
+              "updated_at": "2025-06-29T23:48:48",
+              "user_id": "33"
+            }
+          ],
+          "success": true
+        }
+      },
+      {
+        "name": "discover_user_employee_entities",
+        "arguments": {
+          "entity_type": "users",
+          "filters": {
+            "email": "dcontreras@yahoo.com"
+          }
+        },
+        "output": {
+          "count": 1,
+          "entity_type": "users",
+          "results": [
+            {
+              "created_at": "2020-09-26T07:50:03",
+              "email": "dcontreras@yahoo.com",
+              "first_name": "Derek",
+              "last_name": "Contreras",
+              "mfa_enabled": false,
+              "phone_number": "+13346512812",
+              "role": "employee",
+              "status": "active",
+              "updated_at": "2025-06-09T18:13:53",
+              "user_id": "52"
+            }
+          ],
+          "success": true
+        }
+      },
+      {
+        "name": "discover_user_employee_entities",
+        "arguments": {
+          "entity_type": "employees",
+          "filters": {
+            "user_id": "52"
+          }
+        },
+        "output": {
+          "count": 1,
+          "entity_type": "employees",
+          "results": [
+            {
+              "address": "97200 Katherine Plain, Thomasmouth, VI 09815",
+              "created_at": "2023-03-22T12:46:41",
+              "date_of_birth": "1987-10-13",
+              "employee_id": "6",
+              "employment_status": "active",
+              "hire_date": "2022-01-16",
+              "hourly_rate": 169,
+              "manager_id": null,
+              "position_id": "368",
+              "updated_at": "2024-12-29T02:33:58",
+              "user_id": "52"
+            }
+          ],
+          "success": true
+        }
+      },
+      {
+        "name": "discover_performance_entities",
+        "arguments": {
+          "entity_type": "performance_reviews",
+          "filters": {
+            "employee_id": "6"
+          }
+        },
+        "output": {
+          "count": 6,
+          "entity_type": "performance_reviews",
+          "results": [
+            {
+              "communication_score": 6.6,
+              "created_at": "2022-07-24T10:39:00",
+              "employee_id": "6",
+              "goals_achievement_score": 7.3,
+              "leadership_score": 8.0,
+              "overall_rating": "meets_expectations",
+              "review_id": "6",
+              "review_period_end": "2022-07-15",
+              "review_period_start": "2022-01-16",
+              "review_type": "probationary",
+              "reviewer_id": "5",
+              "status": "submitted",
+              "teamwork_score": 6.3,
+              "technical_skills_score": 7.3,
+              "updated_at": "2024-11-30T02:03:10"
+            },
+            {
+              "communication_score": 7.6,
+              "created_at": "2023-07-17T05:55:59",
+              "employee_id": "6",
+              "goals_achievement_score": 6.9,
+              "leadership_score": 7.1,
+              "overall_rating": "meets_expectations",
+              "review_id": "7",
+              "review_period_end": "2023-07-15",
+              "review_period_start": "2022-07-15",
+              "review_type": "annual",
+              "reviewer_id": "6",
+              "status": "approved",
+              "teamwork_score": 7.7,
+              "technical_skills_score": 7.3,
+              "updated_at": "2024-07-22T14:36:37"
+            },
+            {
+              "communication_score": 9.6,
+              "created_at": "2023-10-19T21:38:26",
+              "employee_id": "6",
+              "goals_achievement_score": 9.0,
+              "leadership_score": 9.5,
+              "overall_rating": "exceeds_expectations",
+              "review_id": "8",
+              "review_period_end": "2023-10-13",
+              "review_period_start": "2023-07-15",
+              "review_type": "quarterly",
+              "reviewer_id": "6",
+              "status": "approved",
+              "teamwork_score": 8.9,
+              "technical_skills_score": 8.8,
+              "updated_at": "2024-09-14T14:33:36"
+            },
+            {
+              "communication_score": 9.6,
+              "created_at": "2024-04-11T00:56:57",
+              "employee_id": "6",
+              "goals_achievement_score": 8.8,
+              "leadership_score": 9.8,
+              "overall_rating": "exceeds_expectations",
+              "review_id": "9",
+              "review_period_end": "2024-04-10",
+              "review_period_start": "2023-10-13",
+              "review_type": "project_based",
+              "reviewer_id": "7",
+              "status": "approved",
+              "teamwork_score": 9.7,
+              "technical_skills_score": 8.7,
+              "updated_at": "2025-06-05T11:56:48"
+            },
+            {
+              "communication_score": 6.7,
+              "created_at": "2024-07-18T17:33:06",
+              "employee_id": "6",
+              "goals_achievement_score": 6.9,
+              "leadership_score": 6.5,
+              "overall_rating": "meets_expectations",
+              "review_id": "10",
+              "review_period_end": "2024-07-09",
+              "review_period_start": "2024-04-10",
+              "review_type": "quarterly",
+              "reviewer_id": "1",
+              "status": "approved",
+              "teamwork_score": 6.3,
+              "technical_skills_score": 7.5,
+              "updated_at": "2025-05-19T14:14:23"
+            },
+            {
+              "communication_score": 7.7,
+              "created_at": "2025-01-02T21:51:38",
+              "employee_id": "6",
+              "goals_achievement_score": 6.4,
+              "leadership_score": 6.9,
+              "overall_rating": "meets_expectations",
+              "review_id": "11",
+              "review_period_end": "2024-12-31",
+              "review_period_start": "2024-07-09",
+              "review_type": "annual",
+              "reviewer_id": "7",
+              "status": "approved",
+              "teamwork_score": 7.4,
+              "technical_skills_score": 6.8,
+              "updated_at": "2025-03-08T22:00:00"
+            }
+          ],
+          "success": true
+        }
+      },
+      {
+        "name": "check_approval",
+        "arguments": {
+          "action": "payroll_correction",
+          "requester_email": "johnfreeman@outlook.com"
+        },
+        "output": {
+          "approval_valid": true,
+          "message": "Role 'finance_officer' is directly authorized for action 'payroll_correction'"
+        }
+      },
+      {
+        "name": "manage_employee",
+        "arguments": {
+          "action": "update",
+          "employee_id": "6",
+          "hourly_rate": 200.0
+        },
+        "output": {
+          "employee_data": {
+            "address": "97200 Katherine Plain, Thomasmouth, VI 09815",
+            "created_at": "2023-03-22T12:46:41",
+            "date_of_birth": "1987-10-13",
+            "employee_id": "6",
+            "employment_status": "active",
+            "hire_date": "2022-01-16",
+            "hourly_rate": 200.0,
+            "manager_id": null,
+            "position_id": "368",
+            "updated_at": "2025-10-01T12:00:00",
+            "user_id": "52"
+          },
+          "employee_id": "6",
+          "message": "Employee with ID '6' updated successfully",
+          "success": true
+        }
+      },
+      {
+        "name": "discover_payroll_entities",
+        "arguments": {
+          "entity_type": "payroll_records",
+          "filters": {
+            "employee_id": "6",
+            "pay_period_start": "2022-03-01"
+          }
+        },
+        "output": {
+          "count": 1,
+          "entity_type": "payroll_records",
+          "results": [
+            {
+              "approved_by": "36",
+              "created_at": "2022-04-05T11:11:29",
+              "employee_id": "6",
+              "hourly_rate": 169.0,
+              "hours_worked": 8.87,
+              "pay_period_end": "2022-03-31",
+              "pay_period_start": "2022-03-01",
+              "payment_date": null,
+              "payroll_id": "20",
+              "status": "draft",
+              "updated_at": "2022-04-13T05:53:13"
+            }
+          ],
+          "success": true
+        }
+      },
+      {
+        "name": "manage_payroll_record",
+        "arguments": {
+          "action": "update",
+          "payroll_data": {
+            "hourly_rate": 200
+          },
+          "payroll_id": "20"
+        },
+        "output": {
+          "action": "update",
+          "message": "Payroll record 20 corrected successfully",
+          "payroll_data": {
+            "approved_by": "36",
+            "created_at": "2022-04-05T11:11:29",
+            "employee_id": "6",
+            "hourly_rate": 200,
+            "hours_worked": 8.87,
+            "pay_period_end": "2022-03-31",
+            "pay_period_start": "2022-03-01",
+            "payment_date": null,
+            "payroll_id": "20",
+            "status": "draft",
+            "updated_at": "2025-10-01T12:00:00"
+          },
+          "payroll_id": "20",
+          "success": true
+        }
+      },
+      {
+        "name": "manage_audit_logs",
+        "arguments": {
+          "action": "update",
+          "field_name": "Hourly_rate",
+          "new_value": "200",
+          "old_value": "169",
+          "operation": "create",
+          "reference_id": "202",
+          "reference_type": "employees",
+          "user_id": "33"
+        },
+        "output": {
+          "action": "update",
+          "field_name": "Hourly_rate",
+          "log_id": "2885",
+          "new_value": "200",
+          "old_value": "169",
+          "reference_id": "202",
+          "reference_type": "employees",
+          "timestamp": "2025-10-01T12:00:00",
+          "user_id": "33"
+        }
+      },
+      {
+        "name": "manage_audit_logs",
+        "arguments": {
+          "action": "update",
+          "field_name": "hourly_rate",
+          "new_value": "200",
+          "old_value": "169",
+          "operation": "create",
+          "reference_id": "203",
+          "reference_type": "payroll_records",
+          "user_id": "33"
+        },
+        "output": {
+          "action": "update",
+          "field_name": "hourly_rate",
+          "log_id": "2886",
+          "new_value": "200",
+          "old_value": "169",
+          "reference_id": "203",
+          "reference_type": "payroll_records",
+          "timestamp": "2025-10-01T12:00:00",
+          "user_id": "33"
+        }
+      }
+    ],
+    "edges": [ 
+         {
+      "from": "instruction",
+      "to": "discover_user_employee_entities",
+      "connection": {
+        "output": "entity_type, email",
+        "input": "entity_type, filters.email"
+      }
+    },
+    {
+      "from": "discover_user_employee_entities",
+      "to": "discover_performance_entities",
+      "connection": {
+        "output": "results[0].employee_id",
+        "input": "filters.employee_id"
+      }
+    },
+    {
+      "from": "instruction",
+      "to": "discover_performance_entities",
+      "connection": {
+        "output": "entity_type",
+        "input": "entity_type"
+      }
+    },
+    {
+      "from": "discover_user_employee_entities",
+      "to": "check_approval",
+      "connection": {
+        "output": "results[0].email",
+        "input": "requester_email"
+      }
+    },
+    {
+      "from": "instruction",
+      "to": "check_approval",
+      "connection": {
+        "output": "action",
+        "input": "action"
+      }
+    },
+    {
+      "from": "discover_user_employee_entities",
+      "to": "manage_employee",
+      "connection": {
+        "output": "results[0].employee_id",
+        "input": "employee_id"
+      }
+    },
+    {
+      "from": "instruction",
+      "to": "manage_employee",
+      "connection": {
+        "output": "action, hourly_rate",
+        "input": "action, hourly_rate"
+      }
+    },
+    {
+      "from": "manage_employee",
+      "to": "discover_payroll_entities",
+      "connection": {
+        "output": "employee_data.employee_id",
+        "input": "filters.employee_id"
+      }
+    },
+    {
+      "from": "instruction",
+      "to": "discover_payroll_entities",
+      "connection": {
+        "output": "entity_type, pay_period_start",
+        "input": "entity_type, filters.pay_period_start"
+      }
+    },
+    {
+      "from": "discover_payroll_entities",
+      "to": "manage_payroll_record",
+      "connection": {
+        "output": "results[0].payroll_id",
+        "input": "payroll_id"
+      }
+    },
+    {
+      "from": "manage_employee",
+      "to": "manage_payroll_record",
+      "connection": {
+        "output": "employee_data.hourly_rate",
+        "input": "payroll_data.hourly_rate"
+      }
+    },
+    {
+      "from": "instruction",
+      "to": "manage_payroll_record",
+      "connection": {
+        "output": "action",
+        "input": "action"
+      }
+    },
+    {
+      "from": "discover_user_employee_entities",
+      "to": "manage_audit_logs",
+      "connection": {
+        "output": "results[0].user_id",
+        "input": "user_id"
+      }
+    },
+    {
+      "from": "manage_employee",
+      "to": "manage_audit_logs",
+      "connection": {
+        "output": "employee_data.hourly_rate",
+        "input": "new_value"
+      }
+    },
+    {
+      "from": "discover_user_employee_entities",
+      "to": "manage_audit_logs",
+      "connection": {
+        "output": "results[0].hourly_rate",
+        "input": "old_value"
+      }
+    },
+    {
+      "from": "instruction",
+      "to": "manage_audit_logs",
+      "connection": {
+        "output": "action, field_name, operation, reference_id, reference_type",
+        "input": "action, field_name, operation, reference_id, reference_type"
+      }
+    },
+    {
+      "from": "manage_payroll_record",
+      "to": "manage_audit_logs",
+      "connection": {
+        "output": "payroll_data.hourly_rate",
+        "input": "new_value"
+      }
+    },
+    {
+      "from": "discover_payroll_entities",
+      "to": "manage_audit_logs",
+      "connection": {
+        "output": "results[0].hourly_rate",
+        "input": "old_value"
+      }
+    }
+],
+    "outputs": ["6", "52"],
+    "num_edges": 18
+  }
+}
