@@ -7,7 +7,7 @@
   "interface_num": 1,
   "task": {
     "user_id": "6",
-    "instruction":"You are Tina Hale (tina86@yahoo.com), an HR Manager. You have to process the promotion of Derek Walker (derekwalker@protonmail.com) to controller on contract basis with his hourly rate as $170,make sure he's enrolled in the mandatory 'Cybersecurity Awareness' training for all new leads",
+    "instruction":"You are Tina Hale (tina86@yahoo.com), an HR Manager. You have to process the promotion of Derek Walker (derekwalker@protonmail.com) to controller on contract basis with his hourly rate as $170,enrolling him in the 'Cybersecurity Awareness' training for all new leads",
     "actions": [  
       {
       "name": "discover_user_employee_entities",
