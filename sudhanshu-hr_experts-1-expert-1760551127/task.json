@@ -515,16 +515,16 @@
       "from": "instruction",
       "to": "discover_user_employee_entities",
       "connection": {
-        "output": "role, first_name, email, entity_type",
-        "input": "role, first_name, email, entity_type"
+        "output": "results[0].role, first_name, results[0].email, entity_type",
+        "input": "filters.role, first_name, filters.email, entity_type"
       }
     },
     {
       "from": "instruction",
       "to": "check_approval",
       "connection": {
-        "output": "action, requester_email",
-        "input": "action, requester_email"
+        "output": "action, results[0].requester_email",
+        "input": "action, filters.requester_email"
       }
     },
     {
@@ -532,7 +532,7 @@
       "to": "discover_payroll_entities",
       "connection": {
         "output": "results[0].employee_id",
-        "input": "employee_id"
+        "input": "filters.employee_id"
       }
     },
     {
@@ -548,7 +548,7 @@
       "to": "manage_payroll_record",
       "connection": {
         "output": "results[0].payroll_id",
-        "input": "payroll_id"
+        "input": "filters.payroll_id"
       }
     },
     {
@@ -580,7 +580,7 @@
       "to": "manage_audit_logs",
       "connection": {
         "output": "results[0].user_id",
-        "input": "user_id"
+        "input": "filters.user_id"
       }
     },
     {
@@ -596,7 +596,7 @@
       "to": "discover_benefits_entities",
       "connection": {
         "output": "results[0].employee_id",
-        "input": "employee_id"
+        "input": "filters.employee_id"
       }
     },
     {
@@ -612,7 +612,7 @@
       "to": "manage_employee_benefits",
       "connection": {
         "output": "results[0].enrollment_id, results[1].enrollment_id, results[2].enrollment_id",
-        "input": "enrollment_id, enrollment_id, enrollment_id"
+        "input": "filters.enrollment_id, filters.enrollment_id, filters.enrollment_id"
       }
     },
     {
@@ -652,7 +652,7 @@
       "to": "discover_training_entities",
       "connection": {
         "output": "results[0].employee_id",
-        "input": "employee_id"
+        "input": "filters.employee_id"
       }
     },
     {
@@ -668,7 +668,7 @@
       "to": "manage_employee_training",
       "connection": {
         "output": "results[0].employee_id, results[0].program_id, results[0].training_record_id",
-        "input": "employee_id, program_id, training_record_id"
+        "input": "filters.employee_id, filters.program_id, filters.training_record_id"
       }
     },
     {
@@ -684,7 +684,7 @@
       "to": "manage_audit_logs",
       "connection": {
         "output": "status, training_record_id",
-        "input": "new_value, reference_id"
+        "input": "new_value,reference_id"
       }
     },
     {
@@ -700,7 +700,7 @@
       "to": "manage_employee",
       "connection": {
         "output": "results[0].employee_id, results[0].user_id",
-        "input": "employee_id, user_id"
+        "input": "filters.employee_id, filters.user_id"
       }
     },
     {
@@ -716,7 +716,7 @@
       "to": "manage_user",
       "connection": {
         "output": "results[0].user_id",
-        "input": "user_id"
+        "input": "filters.user_id"
       }
     },
     {
