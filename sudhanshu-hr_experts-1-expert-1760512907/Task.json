@@ -95,123 +95,56 @@
         }
       },
       {
-        "name": "discover_performance_entities",
-        "arguments": {
-          "entity_type": "performance_reviews",
-          "filters": {
-            "employee_id": "6"
-          }
-        },
-        "output": {
-          "count": 6,
-          "entity_type": "performance_reviews",
-          "results": [
-            {
-              "communication_score": 6.6,
-              "created_at": "2022-07-24T10:39:00",
-              "employee_id": "6",
-              "goals_achievement_score": 7.3,
-              "leadership_score": 8.0,
-              "overall_rating": "meets_expectations",
-              "review_id": "6",
-              "review_period_end": "2022-07-15",
-              "review_period_start": "2022-01-16",
-              "review_type": "probationary",
-              "reviewer_id": "5",
-              "status": "submitted",
-              "teamwork_score": 6.3,
-              "technical_skills_score": 7.3,
-              "updated_at": "2024-11-30T02:03:10"
-            },
-            {
-              "communication_score": 7.6,
-              "created_at": "2023-07-17T05:55:59",
-              "employee_id": "6",
-              "goals_achievement_score": 6.9,
-              "leadership_score": 7.1,
-              "overall_rating": "meets_expectations",
-              "review_id": "7",
-              "review_period_end": "2023-07-15",
-              "review_period_start": "2022-07-15",
-              "review_type": "annual",
-              "reviewer_id": "6",
-              "status": "approved",
-              "teamwork_score": 7.7,
-              "technical_skills_score": 7.3,
-              "updated_at": "2024-07-22T14:36:37"
-            },
-            {
-              "communication_score": 9.6,
-              "created_at": "2023-10-19T21:38:26",
-              "employee_id": "6",
-              "goals_achievement_score": 9.0,
-              "leadership_score": 9.5,
-              "overall_rating": "exceeds_expectations",
-              "review_id": "8",
-              "review_period_end": "2023-10-13",
-              "review_period_start": "2023-07-15",
-              "review_type": "quarterly",
-              "reviewer_id": "6",
-              "status": "approved",
-              "teamwork_score": 8.9,
-              "technical_skills_score": 8.8,
-              "updated_at": "2024-09-14T14:33:36"
-            },
-            {
-              "communication_score": 9.6,
-              "created_at": "2024-04-11T00:56:57",
-              "employee_id": "6",
-              "goals_achievement_score": 8.8,
-              "leadership_score": 9.8,
-              "overall_rating": "exceeds_expectations",
-              "review_id": "9",
-              "review_period_end": "2024-04-10",
-              "review_period_start": "2023-10-13",
-              "review_type": "project_based",
-              "reviewer_id": "7",
-              "status": "approved",
-              "teamwork_score": 9.7,
-              "technical_skills_score": 8.7,
-              "updated_at": "2025-06-05T11:56:48"
-            },
-            {
-              "communication_score": 6.7,
-              "created_at": "2024-07-18T17:33:06",
-              "employee_id": "6",
-              "goals_achievement_score": 6.9,
-              "leadership_score": 6.5,
-              "overall_rating": "meets_expectations",
-              "review_id": "10",
-              "review_period_end": "2024-07-09",
-              "review_period_start": "2024-04-10",
-              "review_type": "quarterly",
-              "reviewer_id": "1",
-              "status": "approved",
-              "teamwork_score": 6.3,
-              "technical_skills_score": 7.5,
-              "updated_at": "2025-05-19T14:14:23"
-            },
-            {
-              "communication_score": 7.7,
-              "created_at": "2025-01-02T21:51:38",
-              "employee_id": "6",
-              "goals_achievement_score": 6.4,
-              "leadership_score": 6.9,
-              "overall_rating": "meets_expectations",
-              "review_id": "11",
-              "review_period_end": "2024-12-31",
-              "review_period_start": "2024-07-09",
-              "review_type": "annual",
-              "reviewer_id": "7",
-              "status": "approved",
-              "teamwork_score": 7.4,
-              "technical_skills_score": 6.8,
-              "updated_at": "2025-03-08T22:00:00"
-            }
-          ],
-          "success": true
+      "name": "discover_performance_entities",
+      "arguments": {
+        "entity_type": "performance_reviews",
+        "filters": {
+          "employee_id": "6",
+          "overall_rating": "exceeds_expectations"
         }
       },
+      "output": {
+        "count": 2,
+        "entity_type": "performance_reviews",
+        "results": [
+          {
+            "communication_score": 9.6,
+            "created_at": "2023-10-19T21:38:26",
+            "employee_id": "6",
+            "goals_achievement_score": 9.0,
+            "leadership_score": 9.5,
+            "overall_rating": "exceeds_expectations",
+            "review_id": "8",
+            "review_period_end": "2023-10-13",
+            "review_period_start": "2023-07-15",
+            "review_type": "quarterly",
+            "reviewer_id": "6",
+            "status": "approved",
+            "teamwork_score": 8.9,
+            "technical_skills_score": 8.8,
+            "updated_at": "2024-09-14T14:33:36"
+          },
+          {
+            "communication_score": 9.6,
+            "created_at": "2024-04-11T00:56:57",
+            "employee_id": "6",
+            "goals_achievement_score": 8.8,
+            "leadership_score": 9.8,
+            "overall_rating": "exceeds_expectations",
+            "review_id": "9",
+            "review_period_end": "2024-04-10",
+            "review_period_start": "2023-10-13",
+            "review_type": "project_based",
+            "reviewer_id": "7",
+            "status": "approved",
+            "teamwork_score": 9.7,
+            "technical_skills_score": 8.7,
+            "updated_at": "2025-06-05T11:56:48"
+          }
+        ],
+        "success": true
+      }
+    },
       {
         "name": "check_approval",
         "arguments": {
@@ -247,6 +180,30 @@
           "employee_id": "6",
           "message": "Employee with ID '6' updated successfully",
           "success": true
+        }
+      },
+      {
+        "name": "manage_audit_logs",
+        "arguments": {
+          "action": "update",
+          "field_name": "Hourly_rate",
+          "new_value": "200",
+          "old_value": "169",
+          "operation": "create",
+          "reference_id": "202",
+          "reference_type": "employees",
+          "user_id": "33"
+        },
+        "output": {
+          "action": "update",
+          "field_name": "Hourly_rate",
+          "log_id": "2885",
+          "new_value": "200",
+          "old_value": "169",
+          "reference_id": "202",
+          "reference_type": "employees",
+          "timestamp": "2025-10-01T12:00:00",
+          "user_id": "33"
         }
       },
       {
@@ -312,30 +269,6 @@
         "name": "manage_audit_logs",
         "arguments": {
           "action": "update",
-          "field_name": "Hourly_rate",
-          "new_value": "200",
-          "old_value": "169",
-          "operation": "create",
-          "reference_id": "202",
-          "reference_type": "employees",
-          "user_id": "33"
-        },
-        "output": {
-          "action": "update",
-          "field_name": "Hourly_rate",
-          "log_id": "2885",
-          "new_value": "200",
-          "old_value": "169",
-          "reference_id": "202",
-          "reference_type": "employees",
-          "timestamp": "2025-10-01T12:00:00",
-          "user_id": "33"
-        }
-      },
-      {
-        "name": "manage_audit_logs",
-        "arguments": {
-          "action": "update",
           "field_name": "hourly_rate",
           "new_value": "200",
           "old_value": "169",
@@ -356,6 +289,8 @@
           "user_id": "33"
         }
       }
+      
+      
     ],
     "edges": [ 
          {
@@ -387,7 +322,7 @@
       "to": "check_approval",
       "connection": {
         "output": "results[0].email",
-        "input": "requester_email"
+        "input": "filters.requester_email"
       }
     },
     {
@@ -403,7 +338,7 @@
       "to": "manage_employee",
       "connection": {
         "output": "results[0].employee_id",
-        "input": "employee_id"
+        "input": "filters.employee_id"
       }
     },
     {
@@ -435,15 +370,15 @@
       "to": "manage_payroll_record",
       "connection": {
         "output": "results[0].payroll_id",
-        "input": "payroll_id"
+        "input": "filters.payroll_id"
       }
     },
     {
       "from": "manage_employee",
       "to": "manage_payroll_record",
       "connection": {
-        "output": "employee_data.hourly_rate",
-        "input": "payroll_data.hourly_rate"
+        "output": "results[0].employee_data.hourly_rate",
+        "input": "filters.payroll_data.hourly_rate"
       }
     },
     {
@@ -459,14 +394,14 @@
       "to": "manage_audit_logs",
       "connection": {
         "output": "results[0].user_id",
-        "input": "user_id"
+        "input": "filters.user_id"
       }
     },
     {
       "from": "manage_employee",
       "to": "manage_audit_logs",
       "connection": {
-        "output": "employee_data.hourly_rate",
+        "output": "results[0].employee_data.hourly_rate",
         "input": "new_value"
       }
     },
